@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RRR Rental Cars &amp; Self Drive | Karimnagar</title>
+<meta name="description" content="Premium self-drive and rental cars in Karimnagar, Telangana. Brand new fleet, flexible packages, 24/7 support. Get your dream ride with our wheels.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<style>
+:root{
+  --matte-black:#0a0a0c;
+  --panel-black:#121216;
+  --royal-blue:#1c3fa8;
+  --royal-blue-bright:#3b62e8;
+  --metallic-silver:#b9bec6;
+  --gold:#c9a24b;
+  --gold-bright:#e8c977;
+  --white:#f5f6f8;
+  --glass:rgba(255,255,255,.06);
+  --glass-border:rgba(255,255,255,.12);
+  --font-display:'Marcellus', serif;
+  --font-body:'Inter', sans-serif;
+  --font-accent:'Bebas Neue', sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--matte-black);
+  color:var(--white);
+  font-family:var(--font-body);
+  margin:0;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:400; letter-spacing:.5px;}
+a{text-decoration:none;}
+::selection{background:var(--gold); color:#0a0a0c;}
+
+/* ---------- scroll reveal fallback ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important;}
+}
+
+/* ---------- utility ---------- */
+.eyebrow{
+  font-family:var(--font-accent);
+  letter-spacing:4px;
+  color:var(--gold-bright);
+  font-size:.85rem;
+  text-transform:uppercase;
+}
+.section-title{
+  font-size:clamp(2rem, 4vw, 3.2rem);
+  margin-bottom:.4rem;
+}
+.section-pad{padding:100px 0;}
+.btn-gold{
+  background:linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color:#0a0a0c;
+  font-weight:700;
+  border:none;
+  border-radius:40px;
+  padding:14px 34px;
+  font-size:.95rem;
+  letter-spacing:.5px;
+  transition:.35s ease;
+  box-shadow:0 8px 24px rgba(201,162,75,.25);
+}
+.btn-gold:hover{ transform:translateY(-3px); box-shadow:0 14px 32px rgba(201,162,75,.4); color:#0a0a0c;}
+.btn-outline-glass{
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  color:var(--white);
+  border-radius:40px;
+  padding:14px 32px;
+  backdrop-filter:blur(12px);
+  transition:.35s ease;
+  font-weight:600;
+}
+.btn-outline-glass:hover{ background:rgba(255,255,255,.14); color:var(--white); transform:translateY(-3px);}
+
+.glass-card{
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:20px;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+
+/* ---------- navbar ---------- */
+.navbar-rrr{
+  position:fixed; top:0; left:0; width:100%; z-index:999;
+  padding:18px 0;
+  transition:.4s ease;
+  background:linear-gradient(to bottom, rgba(10,10,12,.75), transparent);
+}
+.navbar-rrr.scrolled{
+  background:rgba(10,10,12,.85);
+  backdrop-filter:blur(18px);
+  padding:12px 0;
+  border-bottom:1px solid var(--glass-border);
+}
+.navbar-rrr .logo{
+  font-family:var(--font-display);
+  font-size:1.5rem;
+  letter-spacing:1px;
+  color:var(--white);
+}
+.navbar-rrr .logo span{color:var(--gold-bright);}
+.navbar-rrr .nav-link{
+  color:var(--metallic-silver) !important;
+  font-weight:500;
+  margin:0 14px;
+  position:relative;
+  font-size:.92rem;
+}
+.navbar-rrr .nav-link:hover{color:var(--white) !important;}
+.navbar-rrr .nav-link::after{
+  content:''; position:absolute; left:0; bottom:-4px; width:0; height:1.5px;
+  background:var(--gold-bright); transition:.3s;
+}
+.navbar-rrr .nav-link:hover::after{width:100%;}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative; height:100vh; min-height:680px;
+  display:flex; align-items:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(180deg, rgba(8,8,10,.55) 0%, rgba(8,8,10,.55) 40%, rgba(8,8,10,.95) 100%),
+    url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1920&q=80');
+  background-size:cover; background-position:center 65%;
+  transform:scale(1.08);
+  animation:heroZoom 20s ease-in-out infinite alternate;
+}
+@keyframes heroZoom{from{transform:scale(1.08);} to{transform:scale(1);}}
+.hero-glow{
+  position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(circle at 20% 30%, rgba(28,63,168,.35), transparent 45%),
+             radial-gradient(circle at 80% 70%, rgba(201,162,75,.22), transparent 45%);
+}
+.hero-particle{
+  position:absolute; border-radius:50%;
+  background:var(--gold-bright); opacity:.55; filter:blur(1px);
+  animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+  0%{transform:translateY(0) translateX(0); opacity:0;}
+  10%{opacity:.6;}
+  100%{transform:translateY(-110vh) translateX(20px); opacity:0;}
+}
+.hero-content{position:relative; z-index:3;}
+.hero-content .eyebrow{display:block; margin-bottom:18px;}
+.hero-content h1{
+  font-size:clamp(2.6rem, 6vw, 5.2rem);
+  line-height:1.05;
+  margin-bottom:20px;
+  text-shadow:0 6px 30px rgba(0,0,0,.5);
+}
+.hero-content h1 em{
+  font-style:normal;
+  background:linear-gradient(120deg, var(--gold-bright), var(--metallic-silver));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero-content p.lead{
+  color:var(--metallic-silver); font-size:1.15rem; max-width:520px; margin-bottom:36px;
+}
+.hero-scroll-cue{
+  position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+  z-index:3; color:var(--metallic-silver); font-size:.75rem; letter-spacing:3px;
+  text-align:center;
+}
+.hero-scroll-cue .line{
+  width:1px; height:40px; background:linear-gradient(var(--gold-bright), transparent);
+  margin:10px auto 0; animation:scrollLine 1.8s ease-in-out infinite;
+}
+@keyframes scrollLine{0%,100%{opacity:.2;} 50%{opacity:1;}}
+
+/* ---------- about ---------- */
+.about-card{
+  padding:34px 26px; height:100%;
+  transition:.4s ease;
+}
+.about-card:hover{ transform:translateY(-8px); border-color:var(--gold); background:rgba(201,162,75,.06);}
+.about-card i{ font-size:1.6rem; color:var(--gold-bright); margin-bottom:16px;}
+.about-card h4{font-size:1.1rem; font-family:var(--font-body); font-weight:600; margin-bottom:8px;}
+.about-card p{color:var(--metallic-silver); font-size:.9rem; margin:0;}
+
+/* ---------- pricing ---------- */
+.pricing-card{
+  padding:44px 32px; text-align:center; position:relative; overflow:hidden;
+  transition:.4s ease; height:100%;
+}
+.pricing-card.featured{border-color:var(--gold); background:linear-gradient(160deg, rgba(201,162,75,.1), rgba(28,63,168,.08));}
+.pricing-card .badge-pop{
+  position:absolute; top:18px; right:-38px; background:var(--gold-bright); color:#0a0a0c;
+  padding:5px 44px; font-size:.7rem; font-weight:700; letter-spacing:1px; transform:rotate(40deg);
+}
+.pricing-card:hover{transform:translateY(-10px);}
+.pricing-card h3{font-family:var(--font-accent); font-size:2.4rem; color:var(--gold-bright); margin:14px 0 4px;}
+.pricing-card .pkg-label{color:var(--metallic-silver); text-transform:uppercase; letter-spacing:2px; font-size:.75rem;}
+.pricing-card .desc{color:var(--metallic-silver); margin:18px 0 26px; font-size:.92rem;}
+
+/* ---------- fleet ---------- */
+.fleet-card{
+  overflow:hidden; transition:.45s ease; height:100%;
+}
+.fleet-card:hover{transform:translateY(-8px); border-color:var(--gold);}
+.fleet-img-wrap{ position:relative; height:220px; overflow:hidden;}
+.fleet-img-wrap img{width:100%; height:100%; object-fit:cover; transition:.6s ease;}
+.fleet-card:hover .fleet-img-wrap img{transform:scale(1.08);}
+.fleet-tag{
+  position:absolute; top:14px; left:14px; background:rgba(10,10,12,.75);
+  border:1px solid var(--glass-border); backdrop-filter:blur(6px);
+  padding:4px 12px; border-radius:20px; font-size:.72rem; color:var(--gold-bright); letter-spacing:.5px;
+}
+.fleet-body{padding:22px 24px;}
+.fleet-body h4{font-size:1.25rem; margin-bottom:10px;}
+.fleet-specs{display:flex; gap:14px; flex-wrap:wrap; color:var(--metallic-silver); font-size:.8rem; margin-bottom:16px;}
+.fleet-specs span{display:flex; align-items:center; gap:6px;}
+.fleet-price{display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--glass-border); padding-top:14px;}
+.fleet-price .amt{color:var(--gold-bright); font-size:1.2rem; font-weight:700;}
+.fleet-price .amt small{color:var(--metallic-silver); font-weight:400; font-size:.75rem;}
+.btn-book-sm{
+  border:1px solid var(--gold); color:var(--gold-bright); background:transparent;
+  border-radius:30px; padding:8px 20px; font-size:.82rem; font-weight:600; transition:.3s;
+}
+.btn-book-sm:hover{background:var(--gold-bright); color:#0a0a0c;}
+
+/* ---------- features ---------- */
+.feat-icon-card{
+  text-align:center; padding:36px 18px; height:100%; transition:.35s;
+}
+.feat-icon-card:hover{background:rgba(28,63,168,.12); border-color:var(--royal-blue-bright); transform:translateY(-6px);}
+.feat-icon-card .ic{
+  width:64px; height:64px; margin:0 auto 18px; border-radius:50%;
+  background:linear-gradient(135deg, var(--royal-blue), var(--royal-blue-bright));
+  display:flex; align-items:center; justify-content:center; font-size:1.4rem;
+  box-shadow:0 10px 30px rgba(28,63,168,.35);
+}
+.feat-icon-card h5{font-size:1rem; font-weight:600;}
+
+/* ---------- gallery ---------- */
+.masonry{ column-count:3; column-gap:16px;}
+.masonry img{ width:100%; margin-bottom:16px; border-radius:16px; display:block; transition:.4s; cursor:pointer;}
+.masonry img:hover{ filter:brightness(1.15); transform:scale(1.02);}
+@media(max-width:768px){.masonry{column-count:1;}}
+@media(min-width:769px) and (max-width:992px){.masonry{column-count:2;}}
+
+/* ---------- reviews ---------- */
+.review-track{display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px;}
+.review-track::-webkit-scrollbar{height:5px;}
+.review-track::-webkit-scrollbar-thumb{background:var(--gold); border-radius:10px;}
+.review-card{
+  min-width:320px; scroll-snap-align:start; padding:30px; flex:0 0 auto;
+}
+.review-card .stars{color:var(--gold-bright); margin-bottom:14px; letter-spacing:2px;}
+.review-card p.quote{color:var(--metallic-silver); font-style:italic; margin-bottom:18px;}
+.review-card .who{display:flex; align-items:center; gap:12px;}
+.review-card .avatar{
+  width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--gold-bright),var(--royal-blue-bright));
+  display:flex; align-items:center; justify-content:center; font-weight:700; color:#0a0a0c;
+}
+
+/* ---------- contact ---------- */
+.contact-panel{padding:50px; }
+.contact-row{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
+.contact-row i{
+  width:46px; height:46px; border-radius:12px; background:rgba(201,162,75,.12); color:var(--gold-bright);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.contact-row .label{color:var(--metallic-silver); font-size:.78rem; letter-spacing:1px; text-transform:uppercase;}
+.contact-row .val{font-size:1.05rem; font-weight:600;}
+.map-embed{border-radius:20px; overflow:hidden; border:1px solid var(--glass-border); height:100%; min-height:340px;}
+
+/* ---------- footer ---------- */
+footer{ background:#050506; padding:70px 0 24px; border-top:1px solid var(--glass-border);}
+footer h5{font-family:var(--font-display); color:var(--white); margin-bottom:18px;}
+footer a.flink{ color:var(--metallic-silver); display:block; margin-bottom:10px; font-size:.9rem; transition:.25s;}
+footer a.flink:hover{color:var(--gold-bright); padding-left:4px;}
+.social-ic{
+  width:40px; height:40px; border-radius:50%; border:1px solid var(--glass-border);
+  display:inline-flex; align-items:center; justify-content:center; color:var(--white); margin-right:10px; transition:.3s;
+}
+.social-ic:hover{background:var(--gold-bright); color:#0a0a0c; border-color:var(--gold-bright);}
+.footer-bottom{border-top:1px solid var(--glass-border); margin-top:40px; padding-top:22px; color:var(--metallic-silver); font-size:.82rem;}
+
+/* ---------- sticky whatsapp ---------- */
+.float-actions{position:fixed; right:22px; bottom:22px; z-index:998; display:flex; flex-direction:column; gap:12px;}
+.float-actions a{
+  width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:1.3rem; box-shadow:0 10px 26px rgba(0,0,0,.4);
+}
+.fa-whatsapp-btn{background:#25D366;}
+.fa-call-btn{background:linear-gradient(135deg,var(--gold-bright),var(--gold)); color:#0a0a0c;}
+
+@media(max-width:576px){
+  .section-pad{padding:70px 0;}
+  .contact-panel{padding:30px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-rrr" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand logo" href="#home">RRR <span>Rentals</span></a>
+    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#fleet">Cars</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Self Drive</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a href="#contact" class="btn-gold">Book Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div id="particleField"></div>
+  <div class="container hero-content">
+    <span class="eyebrow">Karimnagar's Premium Self Drive Fleet</span>
+    <h1>Drive Your <em>Dream Car</em><br>Today</h1>
+    <p class="lead">Brand new self-drive &amp; rental cars in Karimnagar — Thar, Creta, Seltos, Innova Crysta and more, ready whenever you are.</p>
+    <div class="d-flex flex-wrap gap-3">
+      <a href="#contact" class="btn-gold"><i class="fa-solid fa-key me-2"></i>Book Now</a>
+      <a href="tel:8686608098" class="btn-outline-glass"><i class="fa-solid fa-phone me-2"></i>Call Now</a>
+    </div>
+  </div>
+  <div class="hero-scroll-cue">SCROLL<div class="line"></div></div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section-pad" id="about">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">The RRR Difference</span>
+      <h2 class="section-title">Why Choose RRR Rental Cars?</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="glass-card about-card"><i class="fa-solid fa-car-side"></i><h4>Brand New Vehicles</h4><p>Freshly added, well-kept fleet.</p></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+        <div class="glass-card about-card"><i class="fa-solid fa-tags"></i><h4>Affordable Prices</h4><p>Transparent, fair rental rates.</p></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card about-card"><i class="fa-solid fa-id-card"></i><h4>Self Drive Available</h4><p>Take the wheel, your way.</p></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+        <div class="glass-card about-card"><i class="fa-solid fa-screwdriver-wrench"></i><h4>Well Maintained Cars</h4><p>Serviced &amp; sanitized regularly.</p></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="glass-card about-card"><i class="fa-solid fa-calendar-days"></i><h4>Flexible Packages</h4><p>6 hr, 12 hr or full-day rentals.</p></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+        <div class="glass-card about-card"><i class="fa-solid fa-mobile-screen-button"></i><h4>Easy Booking</h4><p>Book in a few taps or a call.</p></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card about-card"><i class="fa-solid fa-bolt"></i><h4>Fast Delivery</h4><p>Quick pickup &amp; drop across town.</p></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+        <div class="glass-card about-card"><i class="fa-solid fa-headset"></i><h4>24/7 Support</h4><p>We're on call, day or night.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="section-pad" id="pricing" style="background:var(--panel-black);">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Rental Packages</span>
+      <h2 class="section-title">Simple, Flexible Pricing</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="glass-card pricing-card">
+          <p class="pkg-label">City Ride</p>
+          <h3>6 Hours</h3>
+          <p class="desc">Perfect for quick city errands and short trips around Karimnagar.</p>
+          <a href="#contact" class="btn-book-sm">Choose Plan</a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card pricing-card featured">
+          <span class="badge-pop">Popular</span>
+          <p class="pkg-label">Weekend Travel</p>
+          <h3>12 Hours</h3>
+          <p class="desc">Ideal for weekend getaways and half-day outstation trips.</p>
+          <a href="#contact" class="btn-gold">Choose Plan</a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card pricing-card">
+          <p class="pkg-label">Full Day Rental</p>
+          <h3>24 Hours</h3>
+          <p class="desc">Full freedom for a full day — events, functions, or long drives.</p>
+          <a href="#contact" class="btn-book-sm">Choose Plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FLEET ================= -->
+<section class="section-pad" id="fleet">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Our Fleet</span>
+      <h2 class="section-title">Pick Your Ride</h2>
+    </div>
+    <div class="row g-4" id="fleetGrid"></div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="section-pad" style="background:var(--panel-black);">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">On Every Booking</span>
+      <h2 class="section-title">Premium, By Default</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-3" data-aos="zoom-in"><div class="glass-card feat-icon-card"><div class="ic"><i class="fa-solid fa-couch"></i></div><h5>Unlimited Comfort</h5></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="50"><div class="glass-card feat-icon-card"><div class="ic"><i class="fa-solid fa-spray-can-sparkles"></i></div><h5>Sanitized Cars</h5></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100"><div class="glass-card feat-icon-card"><div class="ic"><i class="fa-solid fa-location-crosshairs"></i></div><h5>GPS Enabled</h5></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="150"><div class="glass-card feat-icon-card"><div class="ic"><i class="fa-solid fa-truck-medical"></i></div><h5>Roadside Assistance</h5></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in"><div class="glass-card feat-icon-card"><div class="ic"><i class="fa-solid fa-bolt-lightning"></i></div><h5>Instant Booking</h5></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="50"><div class="glass-card feat-icon-card"><div class="ic"><i class="fa-solid fa-snowflake"></i></div><h5>AC Vehicles</h5></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100"><div class="glass-card feat-icon-card"><div class="ic"><i class="fa-solid fa-car"></i></div><h5>Brand New Fleet</h5></div></div>
+      <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="150"><div class="glass-card feat-icon-card"><div class="ic"><i class="fa-solid fa-shield-halved"></i></div><h5>Safe &amp; Secure</h5></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section-pad" id="gallery">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="section-title">Moments On The Move</h2>
+    </div>
+    <div class="masonry" data-aos="fade-up">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=70" alt="Luxury car exterior">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=70" alt="Car dashboard interior">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=70" alt="Silver car on road">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=70" alt="Car night drive">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=70" alt="Showroom car display">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1541443131876-44b03de101c5?auto=format&fit=crop&w=800&q=70" alt="Road trip highway">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=70" alt="Car on mountain road">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=70" alt="Sunset road drive">
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="section-pad" id="reviews" style="background:var(--panel-black);">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Customer Reviews</span>
+      <h2 class="section-title">What Karimnagar Says</h2>
+    </div>
+    <div class="review-track" data-aos="fade-up">
+      <div class="glass-card review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Excellent service and very clean cars.</p>
+        <div class="who"><div class="avatar">A</div><div><div style="font-weight:600;">Anil K.</div><div style="color:var(--metallic-silver); font-size:.8rem;">Karimnagar</div></div></div>
+      </div>
+      <div class="glass-card review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Best self drive cars in Karimnagar.</p>
+        <div class="who"><div class="avatar">S</div><div><div style="font-weight:600;">Sravani M.</div><div style="color:var(--metallic-silver); font-size:.8rem;">Chinthakunta</div></div></div>
+      </div>
+      <div class="glass-card review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Affordable pricing and smooth booking experience.</p>
+        <div class="who"><div class="avatar">R</div><div><div style="font-weight:600;">Ravi T.</div><div style="color:var(--metallic-silver); font-size:.8rem;">Karimnagar</div></div></div>
+      </div>
+      <div class="glass-card review-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Thar was spotless and delivered right on time.</p>
+        <div class="who"><div class="avatar">P</div><div><div style="font-weight:600;">Praveen R.</div><div style="color:var(--metallic-silver); font-size:.8rem;">Karimnagar</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section-pad" id="contact">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="section-title">Book Your Ride</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="glass-card contact-panel">
+          <div class="contact-row">
+            <i class="fa-solid fa-building"></i>
+            <div><div class="label">Company</div><div class="val">RRR Rental Cars &amp; Self Drive</div></div>
+          </div>
+          <div class="contact-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <div><div class="label">Location</div><div class="val">Chinthakunta, Karimnagar, Telangana</div></div>
+          </div>
+          <div class="contact-row">
+            <i class="fa-solid fa-phone"></i>
+            <div><div class="label">Phone</div><div class="val">8686608098 &nbsp;|&nbsp; 8464020537</div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="tel:8686608098" class="btn-gold"><i class="fa-solid fa-phone me-2"></i>Call</a>
+            <a href="https://wa.me/918686608098" target="_blank" class="btn-outline-glass"><i class="fa-brands fa-whatsapp me-2"></i>WhatsApp</a>
+            <a href="https://maps.google.com/?q=Chinthakunta,Karimnagar,Telangana" target="_blank" class="btn-outline-glass"><i class="fa-solid fa-map-location-dot me-2"></i>Google Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="map-embed">
+          <iframe title="RRR Rental Cars location map" src="https://www.google.com/maps?q=Chinthakunta,Karimnagar,Telangana&output=embed" width="100%" height="100%" style="border:0; min-height:340px;" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="logo mb-3">RRR <span style="color:var(--gold-bright);">Rentals</span></div>
+        <p style="color:var(--metallic-silver); font-size:.9rem;">Get Your Dream Ride With Our Wheels. Premium self-drive &amp; rental cars in Karimnagar.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h5>Quick Links</h5>
+        <a class="flink" href="#home">Home</a>
+        <a class="flink" href="#fleet">Cars</a>
+        <a class="flink" href="#pricing">Pricing</a>
+        <a class="flink" href="#about">About</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h5>Services</h5>
+        <a class="flink" href="#fleet">Self Drive</a>
+        <a class="flink" href="#fleet">Chauffeur Rental</a>
+        <a class="flink" href="#pricing">Outstation Trips</a>
+        <a class="flink" href="#contact">24/7 Support</a>
+      </div>
+      <div class="col-lg-4">
+        <h5>Contact</h5>
+        <p style="color:var(--metallic-silver); font-size:.9rem;">Chinthakunta, Karimnagar, Telangana<br>8686608098 · 8464020537</p>
+        <div class="mt-3">
+          <a href="https://wa.me/918686608098" class="social-ic"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="social-ic"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-ic"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="tel:8686608098" class="social-ic"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      &copy; <span id="year"></span> RRR Rental Cars &amp; Self Drive. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="float-actions">
+  <a href="https://wa.me/918686608098" target="_blank" class="fa-whatsapp-btn"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="tel:8686608098" class="fa-call-btn"><i class="fa-solid fa-phone"></i></a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+
+// navbar scroll state
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// hero particles
+const field = document.getElementById('particleField');
+field.style.position = 'absolute'; field.style.inset = '0'; field.style.zIndex = '2'; field.style.pointerEvents='none';
+for (let i = 0; i < 26; i++) {
+  const p = document.createElement('div');
+  p.className = 'hero-particle';
+  const size = Math.random() * 3 + 1.5;
+  p.style.width = size + 'px';
+  p.style.height = size + 'px';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.bottom = (Math.random() * 20) + '%';
+  p.style.animationDuration = (8 + Math.random() * 10) + 's';
+  p.style.animationDelay = (Math.random() * 10) + 's';
+  field.appendChild(p);
+}
+
+// fleet data
+const fleet = [
+  { name:'Mahindra Thar', img:'https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?auto=format&fit=crop&w=700&q=75', trans:'Manual', fuel:'Diesel', seats:4, price:'₹2,499', unit:'/ 6 hrs', tag:'Off-Road' },
+  { name:'Hyundai Creta', img:'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=700&q=75', trans:'Automatic', fuel:'Petrol', seats:5, price:'₹2,199', unit:'/ 6 hrs', tag:'SUV' },
+  { name:'Kia Seltos', img:'https://images.unsplash.com/photo-1622551401661-6dab08f0f8a1?auto=format&fit=crop&w=700&q=75', trans:'Automatic', fuel:'Petrol', seats:5, price:'₹2,199', unit:'/ 6 hrs', tag:'SUV' },
+  { name:'Toyota Innova Crysta', img:'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=700&q=75', trans:'Manual', fuel:'Diesel', seats:7, price:'₹2,999', unit:'/ 6 hrs', tag:'MPV' },
+  { name:'Maruti Fronx', img:'https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&w=700&q=75', trans:'Manual', fuel:'Petrol', seats:5, price:'₹1,499', unit:'/ 6 hrs', tag:'Compact SUV' },
+  { name:'Tata Nexon', img:'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=700&q=75', trans:'Manual', fuel:'Petrol', seats:5, price:'₹1,599', unit:'/ 6 hrs', tag:'Compact SUV' },
+  { name:'Maruti Swift', img:'https://images.unsplash.com/photo-1471479917193-f00955256257?auto=format&fit=crop&w=700&q=75', trans:'Manual', fuel:'Petrol', seats:5, price:'₹999', unit:'/ 6 hrs', tag:'Hatchback' },
+  { name:'Hyundai Venue', img:'https://images.unsplash.com/photo-1567818735868-e71b99932e29?auto=format&fit=crop&w=700&q=75', trans:'Manual', fuel:'Petrol', seats:5, price:'₹1,499', unit:'/ 6 hrs', tag:'Compact SUV' },
+  { name:'Maruti Brezza', img:'https://images.unsplash.com/photo-1502161254066-6c74afd97ed2?auto=format&fit=crop&w=700&q=75', trans:'Automatic', fuel:'Petrol', seats:5, price:'₹1,699', unit:'/ 6 hrs', tag:'Compact SUV' },
+  { name:'Mahindra XUV700', img:'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=700&q=75', trans:'Automatic', fuel:'Diesel', seats:7, price:'₹2,799', unit:'/ 6 hrs', tag:'SUV' },
+];
+
+const grid = document.getElementById('fleetGrid');
+fleet.forEach((c, i) => {
+  const col = document.createElement('div');
+  col.className = 'col-md-6 col-lg-4';
+  col.setAttribute('data-aos', 'fade-up');
+  col.setAttribute('data-aos-delay', (i % 3) * 80);
+  col.innerHTML = `
+    <div class="glass-card fleet-card">
+      <div class="fleet-img-wrap">
+        <img loading="lazy" src="${c.img}" alt="${c.name}">
+        <span class="fleet-tag">${c.tag}</span>
+      </div>
+      <div class="fleet-body">
+        <h4>${c.name}</h4>
+        <div class="fleet-specs">
+          <span><i class="fa-solid fa-gear"></i>${c.trans}</span>
+          <span><i class="fa-solid fa-gas-pump"></i>${c.fuel}</span>
+          <span><i class="fa-solid fa-user-group"></i>${c.seats} Seats</span>
+        </div>
+        <div class="fleet-price">
+          <div class="amt">${c.price}<small> ${c.unit}</small></div>
+          <a href="#contact" class="btn-book-sm">Book</a>
+        </div>
+      </div>
+    </div>`;
+  grid.appendChild(col);
+});
+</script>
+</body>
+</html>
