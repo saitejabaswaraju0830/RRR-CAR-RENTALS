@@ -30,11 +30,12 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
+html, body{
   background:var(--matte-black);
   color:var(--white);
   font-family:var(--font-body);
   margin:0;
+  max-width:100%;
   overflow-x:hidden;
 }
 h1,h2,h3,h4{font-family:var(--font-display); font-weight:400; letter-spacing:.5px;}
@@ -125,10 +126,22 @@ a{text-decoration:none;}
   background:var(--gold-bright); transition:.3s;
 }
 .navbar-rrr .nav-link:hover::after{width:100%;}
+@media(max-width:991px){
+  .navbar-rrr .navbar-collapse{
+    background:rgba(10,10,12,.97);
+    backdrop-filter:blur(18px);
+    border:1px solid var(--glass-border);
+    border-radius:16px;
+    padding:18px;
+    margin-top:14px;
+  }
+  .navbar-rrr .nav-link{margin:0; padding:10px 4px !important;}
+  .navbar-rrr .btn-gold{display:inline-block; width:100%; text-align:center; margin-top:8px;}
+}
 
 /* ---------- hero ---------- */
 .hero{
-  position:relative; height:100vh; min-height:680px;
+  position:relative; height:100vh; height:100svh; min-height:560px;
   display:flex; align-items:center;
   overflow:hidden;
 }
@@ -302,10 +315,88 @@ footer a.flink:hover{color:var(--gold-bright); padding-left:4px;}
 .fa-whatsapp-btn{background:#25D366;}
 .fa-call-btn{background:linear-gradient(135deg,var(--gold-bright),var(--gold)); color:#0a0a0c;}
 
-@media(max-width:576px){
-  .section-pad{padding:70px 0;}
-  .contact-panel{padding:30px 20px;}
+/* ================= RESPONSIVE LAYER ================= */
+
+/* Large tablets / small laptops */
+@media(max-width:1200px){
+  .section-pad{padding:88px 0;}
 }
+
+/* Tablets */
+@media(max-width:991px){
+  .section-pad{padding:76px 0;}
+  .hero-content p.lead{max-width:100%;}
+  .contact-panel{padding:40px 30px;}
+  .map-embed{min-height:300px; margin-top:10px;}
+  footer{padding:56px 0 20px;}
+  footer .col-lg-4, footer .col-lg-2{margin-bottom:10px;}
+}
+
+/* Large phones / small tablets */
+@media(max-width:767px){
+  .section-pad{padding:60px 0;}
+  .section-title{font-size:clamp(1.7rem, 6vw, 2.4rem);}
+  .hero-content h1{font-size:clamp(2.1rem, 9vw, 3.2rem);}
+  .hero-content p.lead{font-size:1rem;}
+  .hero-content .d-flex{flex-direction:column; align-items:stretch;}
+  .hero-content .btn-gold, .hero-content .btn-outline-glass{
+    width:100%; text-align:center; justify-content:center; display:flex; align-items:center;
+  }
+  .about-card, .feat-icon-card{padding:26px 16px;}
+  .pricing-card{padding:34px 22px;}
+  .pricing-card h3{font-size:2rem;}
+  .fleet-img-wrap{height:190px;}
+  .review-card{min-width:270px; padding:24px;}
+  .contact-panel{padding:30px 20px;}
+  .contact-row{gap:12px;}
+  .contact-row i{width:40px; height:40px; font-size:.9rem;}
+  .float-actions{right:14px; bottom:14px; gap:10px;}
+  .float-actions a{width:48px; height:48px; font-size:1.1rem;}
+  .navbar-rrr .logo{font-size:1.25rem;}
+}
+
+/* Small phones */
+@media(max-width:480px){
+  .container{padding-left:18px; padding-right:18px;}
+  .section-pad{padding:50px 0;}
+  .hero{min-height:520px;}
+  .hero-content h1{font-size:2rem; line-height:1.12;}
+  .hero-content .eyebrow{font-size:.72rem; letter-spacing:2.5px;}
+  .btn-gold, .btn-outline-glass{padding:12px 22px; font-size:.88rem;}
+  .about-card i{font-size:1.35rem;}
+  .about-card h4{font-size:1rem;}
+  .pricing-card .badge-pop{right:-44px; top:16px; font-size:.62rem; padding:4px 40px;}
+  .fleet-body{padding:18px;}
+  .fleet-specs{gap:10px; font-size:.75rem;}
+  .fleet-price .amt{font-size:1.05rem;}
+  .masonry{column-gap:10px;}
+  .masonry img{margin-bottom:10px; border-radius:12px;}
+  .contact-row .val{font-size:.95rem;}
+  footer .logo{font-size:1.3rem;}
+  .social-ic{width:36px; height:36px; margin-right:8px;}
+}
+
+/* Very small / older phones */
+@media(max-width:360px){
+  .hero-content h1{font-size:1.75rem;}
+  .section-title{font-size:1.5rem;}
+  .btn-gold, .btn-outline-glass{padding:11px 18px; font-size:.82rem;}
+}
+
+/* Landscape phones (short viewport height) */
+@media(max-height:480px) and (orientation:landscape){
+  .hero{height:auto; min-height:100vh; padding:120px 0 60px;}
+  .hero-scroll-cue{display:none;}
+}
+
+/* Large desktop / wide screens */
+@media(min-width:1600px){
+  .container{max-width:1400px;}
+}
+
+/* Prevent any element from forcing horizontal scroll */
+img, video, iframe{max-width:100%;}
+.masonry, .review-track{max-width:100%;}
 </style>
 </head>
 <body>
@@ -662,4 +753,4 @@ fleet.forEach((c, i) => {
 });
 </script>
 </body>
-</html>
+    </html>
